@@ -1,18 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 23:13:34 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/29 23:13:34 by maytgarc         ###   ########.fr       */
+/*   Created: 2025/07/29 23:09:33 by maytgarc          #+#    #+#             */
+/*   Updated: 2025/07/29 23:09:33 by maytgarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef BSQ_H
+# define BSQ_H
 
-void	print_error(void)
-{
-	write(2, "map error\n", 10);
-}
+# define O_RDONLY 0
+# include <unistd.h>
+# include <stdlib.h>
+
+typedef struct {
+	char	**grid;
+	int		rows;
+	int		cols;
+	char	empty;
+	char	obst;
+	char	full;
+}	t_map;
+
+//ERR
+void	print_error(void);
+
+//MAPPING
+int		parse_map(int fd, t_map *map);
+void	free_map(t_map *map);
+
+//PRINT
+void	print_map(t_map *map);
+
+//SOLVE
+void	find_square(t_map *map);
+
+#endif
