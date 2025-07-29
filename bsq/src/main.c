@@ -1,4 +1,3 @@
-Here are the contents for the file /bsq/bsq/src/main.c:
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,11 +22,11 @@ int main(int argc, char **argv) {
     int largest_square_size = find_largest_square(map);
     if (largest_square_size < 0) {
         print_error("Error while solving the map.");
-        free_map(map);
+        free(map);
         return EXIT_FAILURE;
     }
 
     print_map_with_square(map, largest_square_size);
-    free_map(map);
+    free(map);
     return EXIT_SUCCESS;
 }

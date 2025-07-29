@@ -1,4 +1,15 @@
-Here are the contents for the file /bsq/bsq/src/error.c:
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: claudialbombin <claudialbombin@student.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/29 13:37:41 by claudialbom       #+#    #+#             */
+/*   Updated: 2025/07/29 13:37:42 by claudialbom      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include <stdio.h>
 #include <stdlib.h>

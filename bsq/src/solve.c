@@ -1,4 +1,3 @@
-Here are the contents for the file /bsq/bsq/src/solve.c:
 
 #include "solve.h"
 #include "map.h"
