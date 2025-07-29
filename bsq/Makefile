@@ -1,5 +1,5 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -Iinclude
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 SRC = src/main.c src/map.c src/solve.c src/print.c src/error.c
 OBJ = $(SRC:.c=.o)
 TARGET = bsq
