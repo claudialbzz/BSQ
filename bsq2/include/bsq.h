@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: claudialbombin <claudialbombin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 23:09:33 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/30 10:21:21 by maytgarc         ###   ########.fr       */
+/*   Updated: 2025/07/30 16:53:51 by claudialbom      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-typedef struct {
+typedef struct 
+{
 	char	**grid;
 	int		rows;
 	int		cols;
