@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.c                                              :+:      :+:    :+:   */
+/*   map1.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: claudialbombin <claudialbombin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 10:43:30 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/30 15:56:30 by claudialbom      ###   ########.fr       */
+/*   Updated: 2025/07/30 16:23:53 by claudialbom      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ static int	parse_first_line(int fd, t_map *map)
 	return (map->rows > 0 && map->empty != map->obst
 		&& map->obst != map->full && map->empty != map->full);
 }
-
-
 
 void	free_map(t_map *map)
 {
