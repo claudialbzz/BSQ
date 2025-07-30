@@ -1,37 +1,30 @@
-#include <unistd.h>
-#include "print.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/30 11:29:13 by maytgarc          #+#    #+#             */
+/*   Updated: 2025/07/30 11:29:31 by maytgarc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	print_map(char **map, int rows, int cols, int largest_square_row, int largest_square_col, int square_size)
+#include "../include/bsq.h"
+
+void	print_map(t_map *map)
 {
-    int	i;
-    int	j;
-    char	c;
+	int	i;
+	int	j;
 
-    i = 0;
-
-    while (i < rows)
-    {
-        j = 0;
-        while (j < cols)
-        {
-            if (i >= largest_square_row && i < largest_square_row + square_size)
-            {
-                if (j >= largest_square_col && j < largest_square_col + square_size)
-                    c = 'x';
-                else
-                    c = map[i][j];
-            }
-            else
-                c = map[i][j];
-            write(1, &c, 1);
-            j++;
-        }
-        write(1, "\n", 1);
-        i++;
-    }
-}
-
-void	print_error(void)
-{
-    write(2, "map error\n", 10);
+	i = 0;
+	j = 0;
+	while (i < map->rows)
+	{
+		j = 0;
+		while (j < map->cols)
+			write(1, &map->grid[i][j++], 1);
+		write(1, "\n", 1);
+		i++;
+	}
 }

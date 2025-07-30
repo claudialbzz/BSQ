@@ -1,18 +1,25 @@
+NAME = bsq
+
+SRCS = src/main.c src/error.c src/map1.c src/solve.c src/print.c src/map2.c src/algorithm.c
+OBJS = $(SRCS:.c=.o)
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRC = src/main.c src/map.c src/solve.c src/print.c src/error.c
-OBJ = $(SRC:.c=.o)
-TARGET = bsq
 
-all: $(TARGET)
+all: $(NAME)
 
-$(TARGET): $(OBJ)
-	$(CC) -o $@ $^
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJS)
 
-.PHONY: all clean
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

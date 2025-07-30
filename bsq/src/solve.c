@@ -1,38 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   solve.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/30 11:29:46 by maytgarc          #+#    #+#             */
+/*   Updated: 2025/07/30 17:40:09 by maytgarc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "solve.h"
-#include "map.h"
-#include <stdlib.h>
+#include "../include/bsq.h"
 
-int find_largest_square(char **map, int rows, int cols) {
-    int **dp = malloc(rows * sizeof(int *));
-    int max_square = 0;
+static int	**allocate_dp(int rows, int cols)
+{
+	int	**dp;
+	int	i;
 
-    for (int i = 0; i < rows; i++) {
-        dp[i] = malloc(cols * sizeof(int));
-        for (int j = 0; j < cols; j++) {
-            if (map[i][j] == '1') {
-                if (i == 0 || j == 0) {
-                    dp[i][j] = 1;
-                } else {
-                    dp[i][j] = 1 + (dp[i-1][j] < dp[i][j-1] ? 
-                                    (dp[i-1][j] < dp[i-1][j-1] ? 
-                                    dp[i-1][j] : dp[i-1][j-1]) : 
-                                    (dp[i][j-1] < dp[i-1][j-1] ? 
-                                    dp[i][j-1] : dp[i-1][j-1]));
-                }
-                if (dp[i][j] > max_square) {
-                    max_square = dp[i][j];
-                }
-            } else {
-                dp[i][j] = 0;
-            }
-        }
-    }
+	dp = malloc(rows * sizeof(int *));
+	i = 0;
+	while (i < rows)
+	{
+		dp[i] = malloc(cols * sizeof(int));
+		i++;
+	}
+	return (dp);
+}
 
-    for (int i = 0; i < rows; i++) {
-        free(dp[i]);
-    }
-    free(dp);
+static void	free_dp(int **dp, int rows)
+{
+	int	i;
 
-    return max_square;
+	i = 0;
+	while (i < rows)
+		free(dp[i++]);
+	free(dp);
+}
+
+void	find_square(t_map *map)
+{
+	int		**dp;
+	t_axis	info;
+
+	dp = allocate_dp(map->rows, map->cols);
+	find_largest_square(map, dp, &info);
+	fill_largest_square(map, info.max, info.mi, info.mj);
+	free_dp(dp, map->rows);
 }
