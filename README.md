@@ -8,17 +8,16 @@ The BSQ (Biggest Square) project is a C application designed to find the largest
 bsq
 ├── src
 │   ├── main.c        # Entry point of the application
-│   ├── map.c         # Functions for map handling
+│   ├── map1.c        # Functions for map handling -1
+│   ├── map2.c        # Functions for map handling -2
 │   ├── solve.c       # Logic for solving the problem
+│   ├── algorithm.c   # Algorith for solving the problem
 │   ├── print.c       # Functions for printing results
 │   └── error.c       # Error handling functions
 ├── include
-│   ├── map.h         # Header for map functions
-│   ├── solve.h       # Header for solving functions
-│   ├── print.h       # Header for printing functions
-│   └── error.h       # Header for error handling functions
-├── Makefile           # Build instructions
-└── README.md          # Project documentation
+│   └── bsq.h         # Header for all functions needed
+├── Makefile          # Build instructions
+└── README.md         # Project documentation
 ```
 
 ## Compilation
