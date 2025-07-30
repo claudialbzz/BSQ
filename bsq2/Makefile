@@ -1,6 +1,6 @@
 NAME = bsq
 
-SRCS = src/main.c src/error.c src/map.c src/solve.c src/print.c
+SRCS = src/main.c src/error.c src/map1.c src/solve.c src/print.c src/map2.c
 OBJS = $(SRCS:.c=.o)
 
 CC = cc

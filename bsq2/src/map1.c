@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: claudialbombin <claudialbombin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 10:43:30 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/30 11:27:24 by maytgarc         ###   ########.fr       */
+/*   Updated: 2025/07/30 15:56:30 by claudialbom      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,46 +45,7 @@ static int	parse_first_line(int fd, t_map *map)
 		&& map->obst != map->full && map->empty != map->full);
 }
 
-int	parse_map(int fd, t_map *map)
-{
-	char	buf[1024];
-	int		len;
-	int		i;
-	int		row;
 
-	if (!parse_first_line(fd, map))
-		return (0);
-	len = read_line(fd, buf);
-	if (len <= 0)
-		return (0);
-	map->cols = len;
-	map->grid = malloc(map->rows * sizeof(char *));
-	map->grid[0] = malloc(map->cols + 1);
-	i = 0;
-	while (i < len)
-	{
-		map->grid[0][i] = buf[i];
-		i++;
-	}
-	map->grid[0][i] = 0;
-	row = 1;
-	while (row < map->rows)
-	{
-		len = read_line(fd, buf);
-		if (len != map->cols)
-			return (0);
-		map->grid[row] = malloc(map->cols + 1);
-		i = 0;
-		while (i < len)
-		{
-			map->grid[row][i] = buf[i];
-			i++;
-		}
-		map->grid[row][i] = 0;
-		row++;
-	}
-	return (1);
-}
 
 void	free_map(t_map *map)
 {
