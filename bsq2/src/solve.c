@@ -6,7 +6,7 @@
 /*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 11:29:46 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/30 11:38:50 by maytgarc         ###   ########.fr       */
+/*   Updated: 2025/07/30 15:13:39 by maytgarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	find_square(t_map *map)
 				if (i && j)
 					dp[i][j] += min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
 				if (dp[i][j] > max)
-				{
+				{ 
 					max = dp[i][j];
 					mi = i;
 					mj = j;
