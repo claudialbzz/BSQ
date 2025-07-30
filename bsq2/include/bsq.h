@@ -6,7 +6,7 @@
 /*   By: maytgarc <maytgarc@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 23:09:33 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/29 23:09:33 by maytgarc         ###   ########.fr       */
+/*   Updated: 2025/07/30 10:21:21 by maytgarc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define O_RDONLY 0
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 typedef struct {
 	char	**grid;
