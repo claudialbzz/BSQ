@@ -6,13 +6,13 @@
 /*   By: claudialbombin <claudialbombin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 10:43:30 by maytgarc          #+#    #+#             */
-/*   Updated: 2025/07/30 16:23:53 by claudialbom      ###   ########.fr       */
+/*   Updated: 2025/07/30 17:19:02 by claudialbom      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bsq.h"
 
-static int	read_line(int fd, char *buf)
+int	read_line(int fd, char *buf)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ static int	read_line(int fd, char *buf)
 	return (i);
 }
 
-static int	parse_first_line(int fd, t_map *map)
+int	parse_first_line(int fd, t_map *map)
 {
 	char	buf[32];
 	int		len;

@@ -6,13 +6,13 @@
 /*   By: claudialbombin <claudialbombin@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 16:23:23 by claudialbom       #+#    #+#             */
-/*   Updated: 2025/07/30 16:23:24 by claudialbom      ###   ########.fr       */
+/*   Updated: 2025/07/30 17:19:39 by claudialbom      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bsq.h"
 
-static int	init_grid(t_map *map, int len, char *buf)
+int	init_grid(t_map *map, int len, char *buf)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ static int	init_grid(t_map *map, int len, char *buf)
 	return (1);
 }
 
-static int	fill_row(t_map *map, int row, int len, char *buf)
+int	fill_row(t_map *map, int row, int len, char *buf)
 {
 	int	i;
 
